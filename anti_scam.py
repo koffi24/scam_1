@@ -134,7 +134,6 @@ while True:
     # Initialize the mixer and load the audio file
     mixer.music.load('output.mp3')
     
-    
     mixer.music.play()
  
     # Wait for the music to finish playing

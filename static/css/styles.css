@@ -36,7 +36,7 @@ h1 {
 }
 
 /* Style pour les messages de la victime (user2) */
-.user2 {
+.user2 { 
     background-color: #f8d7da;
     text-align: right;
     color: #842029;
