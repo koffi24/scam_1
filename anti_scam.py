@@ -19,7 +19,7 @@ llm_client = InferenceClient(
     api_key="eyJhbGciOiJIUzI1NiIsImtpZCI6IlV6SXJWd1h0dnprLVRvdzlLZWstc0M1akptWXBvX1VaVkxUZlpnMDRlOFUiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJnb29nbGUtb2F1dGgyfDExNTYyMDQwMjcwMTg4NDk2NDk1MSIsInNjb3BlIjoib3BlbmlkIG9mZmxpbmVfYWNjZXNzIiwiaXNzIjoiYXBpX2tleV9pc3N1ZXIiLCJhdWQiOlsiaHR0cHM6Ly9uZWJpdXMtaW5mZXJlbmNlLmV1LmF1dGgwLmNvbS9hcGkvdjIvIl0sImV4cCI6MTkwMjQ3NTYwMCwidXVpZCI6Ijg2MzExNjIyLTJjMjQtNDdlYS04ZmI2LTJhOGUzOGUzYmM4MCIsIm5hbWUiOiJlc3RpYW0iLCJleHBpcmVzX2F0IjoiMjAzMC0wNC0xNVQwOToyNjo0MCswMDAwIn0.tuplcuYfIAIlXm_aoqv9sY56XQ41HS6wfxliVe5tlck",
 )
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="key.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="key1.json"
 
 # Donner le contexte général
 context = "Tu es une fausse victime d'arnaque. Tu sert à faire perdre du temps à un arnaqueur. Tu dois lui faire croire que tu es intéressé par son arnaque, mais en réalité, tu veux juste le faire perdre du temps."
