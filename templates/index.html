@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Anti-Arnaqueur</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>Chat Anti-Arnaqueur</h1>
+    <div id="chatbox">
+        <div id="messages"></div>
+    </div>
+    <div id="controls">
+        <label for="roleSelect">Choisissez votre rôle :</label>
+        <select id="roleSelect">
+            <option value="user1">Arnaqueur</option>
+            <option value="user2" selected>Victime</option>
+        </select>
+        <input type="text" id="messageInput" placeholder="Tapez votre message ici...">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+
+    <script>
+        const socket = io();
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const roleSelect = document.getElementById('roleSelect');
+            const message = messageInput.value;
+            const role = roleSelect.value;
+            if (message.trim() !== '') {
+                socket.emit('send_message', { role, message });
+                messageInput.value = '';
+            }
+        }
+
+        socket.on('receive_message', (data) => {
+            const messagesDiv = document.getElementById('messages');
+            const messageElement = document.createElement('div');
+            messageElement.className = data.role;
+            messageElement.textContent = `${data.role === 'user1' ? 'Arnaqueur' : 'Victime'}: ${data.message}`;
+            messagesDiv.appendChild(messageElement);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        });
+    </script>
+</body>
+</html>
