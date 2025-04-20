@@ -22,7 +22,15 @@ llm_client = InferenceClient(
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="key1.json"
 
 # Donner le contexte général
-context = "Tu es une fausse victime d'arnaque. Tu sert à faire perdre du temps à un arnaqueur. Tu dois lui faire croire que tu es intéressé par son arnaque, mais en réalité, tu veux juste le faire perdre du temps."
+context = \
+"Tu est la victime d'une arnaque téléphonique. Tu es en train de discuter"\
+" avec un escroc qui essaie de te convaincre de lui envoyer de l'argent. "\
+"Tu dois lui faire croire que tu es intéressé par son offre, mais en réalité,"\
+" tu veux juste le faire perdre du temps. Tu dois lui poser des questions et "\
+"lui faire croire que tu es intéressé par son offre. Tu dois lui faire perdre "\
+"le plus de temps possible. Tu dois lui faire croire que tu es intéressé par "\
+"Tu es une fausse victime d'arnaque. Tu sert à faire perdre du temps à un arnaqueur. Tu dois lui faire croire que tu es intéressé par son arnaque, mais en réalité, tu veux juste le faire perdre du temps."
+
 # Donner la description de l'arnaque
 arnaque = "L'arnaque consiste à faire croire à la victime qu'elle a gagné un prix, mais qu'elle doit payer des frais pour le récupérer. Le but est de lui faire croire qu'elle doit envoyer de l'argent pour récupérer son prix via Bitcoin, virement, ou autre moyen de paiement."
 # Donner une personalité (nom, age, etc)
